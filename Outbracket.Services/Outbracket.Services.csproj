@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.IdentityModel.Logging" Version="6.8.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.8.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.8.0" />
+    <PackageReference Include="System.Linq.Async" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Outbracket.Common\Outbracket.Common.csproj" />
+    <ProjectReference Include="..\Outbracket.Enums\Outbracket.Enums.csproj" />
+    <ProjectReference Include="..\Outbracket.Globalization\Outbracket.Globalization.csproj" />
+    <ProjectReference Include="..\Outbracket.Mongo.Repositories.Contracts\Outbracket.Mongo.Repositories.Contracts.csproj" />
+    <ProjectReference Include="..\Outbracket.Repositories.Contracts\Outbracket.Repositories.Contracts.csproj" />
+    <ProjectReference Include="..\Outbracket.Services.Contracts\Outbracket.Services.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,39 @@
+﻿@model Outbracket.Common.Services.Notifier.Email.Models.EmailConfirmation
+
+<table border="0" cellpadding="0" cellspacing="0" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:18px;max-width:600px;margin-left:auto;margin-right:auto">
+    <tbody>
+    <tr bgcolor="white">
+        <td>
+            <table width="100%" border="0" cellpadding="20" cellspacing="0">
+                <tbody>
+                <tr>
+                    <td>
+                        <p><strong>Dear @Model.FullName,</strong><br>
+                            <br>
+                            Thank you for registering Outbracket Account. In order to verify your e-mail account (<a href="mailto:@Model.Email" target="_blank">@Model.Email</a>) is active, please:<br>
+                        </p>
+                    </td>
+                </tr>
+                <tr style="text-align: center;">
+                    <td><a href="@Model.Link" target="_blank" style=
+                           "text-decoration: none;
+                           color: white;
+                           text-transform: uppercase;
+                           white-space: nowrap;
+                           background-color: #1d1d1d;
+                           border-color: #1d1d1d;
+                           padding: 10px 20px;">Confirm email</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        If the above link isn't working, please copy and paste below web address to your browser's address bar.<br>
+                        <a href="@Model.Link" target="_blank" href="{link}">@Model.Link</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>

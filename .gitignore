@@ -1,0 +1,43 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# testing
+/coverage
+
+npm-debug.log*
+# IDEs
+.vs/
+.idea/
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+bin/
+Bin/
+obj/
+Obj/
+
+# packages
+**/packages/*
+node_modules
+
+# cache
+*.cache
+
+# settings
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+*.pfx
+*.publishsettings
+*.pubxml*
+*.user
+orleans.codegen.cs
+
+#configs
+*.Development.json
+*.Release.json

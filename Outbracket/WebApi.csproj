@@ -1,0 +1,68 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+    <LangVersion>9</LangVersion>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == '' Or '$(Configuration)' == 'Debug'">
+    <EnvironmentName>Development</EnvironmentName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' != '' AND '$(Configuration)' != 'Debug' ">
+    <EnvironmentName>Production</EnvironmentName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="5.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.1" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.8.0" />
+    <PackageReference Include="SendGrid" Version="9.21.2" />
+    <PackageReference Include="SendGrid.Extensions.DependencyInjection" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.Development.json">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <None Remove="Outbracket.Mongo.Contracts\**" />
+    <Content Remove="Outbracket.Mongo.Contracts\**" />
+    <None Remove="Outbracket.Mongo.Repositories\**" />
+    <Content Remove="Outbracket.Mongo.Repositories\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Outbracket.Api.Contracts\Outbracket.Api.Contracts.csproj" />
+    <ProjectReference Include="..\Outbracket.Controllers\Outbracket.Controllers.csproj" />
+    <ProjectReference Include="..\Outbracket.Mongo.Repositories.Contracts\Outbracket.Mongo.Repositories.Contracts.csproj" />
+    <ProjectReference Include="..\Outbracket.Mongo.Repositories\Outbracket.Mongo.Repositories.csproj" />
+    <ProjectReference Include="..\Outbracket.Repositories.Contracts\Outbracket.Repositories.Contracts.csproj" />
+    <ProjectReference Include="..\Outbracket.Repository\Outbracket.Repositories.csproj" />
+    <ProjectReference Include="..\Outbracket.Services.Contracts\Outbracket.Services.Contracts.csproj" />
+    <ProjectReference Include="..\Outbracket.Services\Outbracket.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Outbracket.Mongo.Contracts\**" />
+    <Compile Remove="Outbracket.Mongo.Repositories\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Outbracket.Mongo.Contracts\**" />
+    <EmbeddedResource Remove="Outbracket.Mongo.Repositories\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Outbracket.Mongo.Contracts\obj\Outbracket.Mongo.Contracts.csproj.nuget.dgspec.json" />
+    <_ContentIncludedByDefault Remove="Outbracket.Mongo.Contracts\obj\project.assets.json" />
+    <_ContentIncludedByDefault Remove="Outbracket.Mongo.Contracts\obj\project.packagespec.json" />
+    <_ContentIncludedByDefault Remove="Outbracket.Mongo.Repositories\obj\Outbracket.Mongo.Repositories.csproj.nuget.dgspec.json" />
+    <_ContentIncludedByDefault Remove="Outbracket.Mongo.Repositories\obj\project.assets.json" />
+    <_ContentIncludedByDefault Remove="Outbracket.Mongo.Repositories\obj\project.packagespec.json" />
+  </ItemGroup>
+</Project>

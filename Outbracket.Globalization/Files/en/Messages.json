@@ -1,0 +1,9 @@
+﻿{
+  "EmailConfirmationSubject": "email confirmation",
+  "ConfirmationEmailIsNotSent": "confirmation email is not sent",
+  "PasswordResetIsNotSent": "password reset email is not sent",
+  "UnhandledException": "unhandled exception",
+  "PasswordResetSubject": "Password reset",
+  "UserNotFound": "user not found",
+  "OperationIsNotPermitted": "operation is not permitted"
+}

@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Outbracket.Globalization\Outbracket.Globalization.csproj" />
+    <ProjectReference Include="..\Outbracket.Services.Contracts\Outbracket.Services.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Formatters.Json" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Requests\Common.cs" />
+  </ItemGroup>
+
+</Project>

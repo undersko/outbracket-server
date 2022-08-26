@@ -1,0 +1,10 @@
+{
+  "UsernameOrEmailIsInvalid": "user name or email is invalid",
+  "UserEmailExist": "user with this email already exists",
+  "UsernameExist": "user with this username already exists",
+  "UserDoesntExist": "user with this email doesn't exist",
+  "ConfirmationEmailTokenInvalid": "invalid confirmation email token",
+  "RefreshTokenIsInvalid": "token is invalid",
+  "EmailIsNotConfirmed": "email is not confirmed",
+  "MaximumLength": "the length of field must be {0} characters or fewer"
+}
