@@ -32,6 +32,7 @@ using Outbracket.Repositories.Contracts.Interfaces.Dictionaries;
 using Outbracket.Repositories.Implementations.Dictionaries;
 using Outbracket.Services.Contracts.Interfaces.Dictionary;
 using Outbracket.Services.Implementations.Dictionary;
+using WebApi.Binders;
 using WebApi.Middleware;
 
 namespace WebApi
@@ -134,7 +135,10 @@ namespace WebApi
                     SenderName = Configuration["ExternalProviders:SendGrid:SenderName"]
                 }, x.GetRequiredService<IRazorViewToStringRenderer>())
             );
-            services.AddControllers().AddJsonOptions(option =>
+            services.AddControllers(options =>
+            {
+                options.ModelBinderProviders.Insert(0, new CustomBinderProvider());
+            }).AddJsonOptions(option =>
                 option.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase);
         }
 

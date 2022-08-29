@@ -59,8 +59,19 @@ namespace Outbracket.Common.Services.Blob.S3
                     }
                     else
                     {
-                        image.Scale(crop.ImageWidth, crop.ImageHeight);
-                        image.Crop(new MagickGeometry(crop.X, crop.Y, crop.Width, crop.Height));
+                        if (crop.Unit == "%")
+                        {
+                            var x = (int) (image.Width * crop.X / 100);
+                            var y = (int) (image.Height * crop.Y / 100);
+                            image.Crop(
+                                new MagickGeometry(x, y, new Percentage((double)crop.Width), new Percentage((double)crop.Height))
+                            );
+                        }
+                        else
+                        {
+                            image.Scale(crop.ImageWidth, crop.ImageHeight);
+                            image.Crop(new MagickGeometry((int)crop.X, (int)crop.Y, (int)crop.Width, (int)crop.Height));
+                        }
                     }
                     await memoryStream.WriteAsync(image.ToByteArray(), 0, image.ToByteArray().Length);
                     memoryStream.Position = 0;

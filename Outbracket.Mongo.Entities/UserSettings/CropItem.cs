@@ -2,15 +2,15 @@ namespace Outbracket.Mongo.Entities.UserSettings
 {
     public class CropItem
     {
-        public int X { get; set; }
+        public decimal X { get; set; }
         
-        public int Y { get; set; }
+        public decimal Y { get; set; }
         
         public int Aspect { get; set; }
 
-        public int Height { get; set; }
+        public decimal Height { get; set; }
         
-        public int Width { get; set; }
+        public decimal Width { get; set; }
 
         public string Unit { get; set; }
     }
